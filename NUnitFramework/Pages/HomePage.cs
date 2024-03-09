@@ -10,6 +10,18 @@ namespace TurnUpPortalAutomation.Pages
 {
     public class HomePage
     {
+        public void NavigateToCustomerPage(IWebDriver driver)
+        {
+            // Navigate to Time and material modeule
+            IWebElement administartionDrpdown = driver.FindElement(By.XPath("//a[text()='Administration ']"));
+            administartionDrpdown.Click();
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            IWebElement customerOption = driver.FindElement(By.XPath("//a[text()='Customers']"));
+            customerOption.Click();
+            Console.WriteLine("User is on customer page");
+
+        }
 
         public void NavigateToTMPage(IWebDriver driver)
         {
